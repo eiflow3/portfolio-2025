@@ -16,12 +16,12 @@ export default function Contacts() {
   const items = [
     {
       title: "Github",
-      link: "github.com/eiflow3",
+      link: "https://github.com/eiflow3",
       icon: <GitHubIcon sx={{ color: "#fff" }} />,
     },
     {
       title: "Facebook",
-      link: "facebook.com/mikelxsantos",
+      link: "https://www.facebook.com/mikelxsantos",
       icon: <FacebookIcon sx={{ color: "#fff" }} />,
     },
     {
@@ -82,7 +82,7 @@ export default function Contacts() {
                   justifyContent: "center",
                 }}
               >
-                <Link href={item.link}>{item.icon}</Link>
+                <Link href={item.link} target="_blank">{item.icon}</Link>
                 <Typography>{item.title}</Typography>
               </Box>
             );
