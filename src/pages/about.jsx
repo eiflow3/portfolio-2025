@@ -1,5 +1,6 @@
 import { Typography, Container, Box, List, ListItem } from "@mui/material";
-import pic from "/pic.png";
+import { motion } from "framer-motion";
+import pic from "/pic.webp";
 export default function About() {
   const technologies = [
     "HTML",
@@ -33,8 +34,11 @@ export default function About() {
           gap: 2,
         }}
       >
-        <Box
-          sx={{
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+          viewport={{ once: false }}
+          style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "start",
@@ -85,8 +89,15 @@ export default function About() {
               );
             })}
           </List>
-        </Box>
-        <img src={pic} style={{ width: "20%", aspectRatio: "1/1" }} />
+        </motion.div>
+
+        <motion.img
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+          viewport={{ once: false }}
+          src={pic}
+          style={{ width: "20%", aspectRatio: "1/1" }}
+        />
       </Box>
     </Container>
   );

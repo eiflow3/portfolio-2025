@@ -7,6 +7,8 @@ import {
   Link,
 } from "@mui/material";
 
+import { motion } from "framer-motion";
+
 import LinkButton from "../components/link-buttton";
 
 const links = ["about", "projects", "contacts"];
@@ -30,12 +32,17 @@ export default function Landing() {
           width: "100%",
           height: "100px",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-end",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
           backgroundColor: "transparent",
+          p: 4,
           mb: 20,
         }}
       >
+        <Link href={`https://ashy-rock-0b74c031e.4.azurestaticapps.net`}>
+          <img src="svg/brand.svg" alt="" style={{ width: "50px" }} />
+        </Link>
         <Toolbar
           sx={{
             display: "flex",
@@ -49,8 +56,11 @@ export default function Landing() {
           })}
         </Toolbar>
       </AppBar>
-      <Box
-        sx={{
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+        viewport={{ once: false }}
+        style={{
           display: "flex",
           flexDirection: "column",
           width: "50%",
@@ -66,13 +76,14 @@ export default function Landing() {
           sx={{
             fontWeight: "800",
             pl: 10,
-            color: "#748d92",
-            textShadow: "4px 4px 2px #000",  
+            color: "#D3D9D4 ",
+            textShadow: "4px 4px 2px #000",
             letterSpacing: "0.1em",
+            // fontFamily: 'Special Elite',
           }}
           gutterBottom
         >
-          Michael Joseph T. Santos
+          MICHAEL JOSEPH T. SANTOS
           <br />
         </Typography>
         <Typography variant="six" sx={{ fontWeight: "600" }} gutterBottom>
@@ -81,7 +92,12 @@ export default function Landing() {
         </Typography>
         <Typography
           variant="three"
-          sx={{ display: "flex", fontWeight: "300", width: "80%" }}
+          sx={{
+            display: "flex",
+            // fontFamily: "Reenie Beanie",
+            fontWeight: "300",
+            width: "80%",
+          }}
           gutterBottom
         >
           I'm a senior college student aspiring to engineer intelligent
@@ -90,7 +106,7 @@ export default function Landing() {
           impactful digital experiences.
           <br />
         </Typography>
-      </Box>
+      </motion.div>
     </Container>
   );
 }

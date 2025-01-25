@@ -15,9 +15,12 @@
     "@fontsource-variable/source-code-pro": "^5.1.1",
     "@fontsource-variable/source-sans-3": "^5.1.1",
     "@fontsource-variable/space-grotesk": "^5.1.1",
+    "@fontsource/reenie-beanie": "^5.1.1",
+    "@fontsource/special-elite": "^5.1.1",
     "@mui/icons-material": "^6.4.1",
     "@mui/material": "^6.4.1",
     "@tailwindcss/vite": "^4.0.0",
+    "framer-motion": "^12.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^4.0.0"

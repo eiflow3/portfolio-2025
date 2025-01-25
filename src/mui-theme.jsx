@@ -1,5 +1,7 @@
 import '@fontsource-variable/space-grotesk';
 import '@fontsource-variable/source-code-pro';
+import '@fontsource/reenie-beanie';
+import '@fontsource/special-elite';
 import { createTheme, ThemeProvider } from "@mui/material";
 
 const colors = {
