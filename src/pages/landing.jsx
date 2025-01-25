@@ -6,7 +6,10 @@ import {
   Toolbar,
   Link,
 } from "@mui/material";
-import App from "../App";
+
+import LinkButton from "../components/link-buttton";
+
+const links = ["about", "projects", "contacts"];
 
 export default function Landing() {
   return (
@@ -41,22 +44,9 @@ export default function Landing() {
             paddingRight: "100px !important",
           }}
         >
-          <Link href="#about" underline="none">
-            <Typography variant="two" sx={{ fontWeight: 100 }} gutterBottom>
-              About
-            </Typography>
-          </Link>
-          <Link href="#projects" underline="none">
-            <Typography variant="two" sx={{ fontWeight: 100 }} gutterBottom>
-              Projects
-            </Typography>
-          </Link>
-
-          <Link href="#contacts" underline="none">
-            <Typography variant="two" sx={{ fontWeight: 100 }} gutterBottom>
-              Contacts
-            </Typography>
-          </Link>
+          {links.map((link) => {
+            return <LinkButton link={link} />;
+          })}
         </Toolbar>
       </AppBar>
       <Box
@@ -73,7 +63,13 @@ export default function Landing() {
         </Typography>
         <Typography
           variant="eight"
-          sx={{ fontWeight: "600", pl: 10 }}
+          sx={{
+            fontWeight: "800",
+            pl: 10,
+            color: "#748d92",
+            textShadow: "4px 4px 2px #000",  
+            letterSpacing: "0.1em",
+          }}
           gutterBottom
         >
           Michael Joseph T. Santos

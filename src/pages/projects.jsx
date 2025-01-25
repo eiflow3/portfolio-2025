@@ -1,13 +1,15 @@
 import { Typography, Container, Box, List, ListItem } from "@mui/material";
 
-import frame7 from "/frame7.png";
-import one from "/1.png";
-import two from "/2.png";
-import three from "/3.png";
-import four from "/4.png";
-import five from "/5.png";
-import six from "/6.png";
-import seven from "/2.png";
+import frame7 from "/frame7.webp";
+import one from "/1.webp";
+import two from "/2.webp";
+import three from "/3.webp";
+import four from "/4.webp";
+import five from "/5.webp";
+import six from "/6.webp";
+import seven from "/7.webp";
+import zIndex from "@mui/material/styles/zIndex";
+import { AspectRatio } from "@mui/icons-material";
 
 export default function Projects() {
   const softwares = [
@@ -49,7 +51,7 @@ export default function Projects() {
   ];
   return (
     <Container
-    id="projects"
+      id="projects"
       sx={{
         width: "100%",
         maxWidth: "100% !important",
@@ -67,19 +69,26 @@ export default function Projects() {
           display: "flex",
           flexDirection: "column",
           alignItems: "end",
-          width: "50%",
+          width: "calc(50% + 16px)",
           height: "100%",
           gap: 2,
-          paddingTop: "50px"
+          paddingTop: "50px",
         }}
       >
         <Typography
+          variant="two"
+          component={"h1"}
+          sx={{ alignSelf: "start", position: "relative", right: "6%" }}
+        >
+          [o2]
+        </Typography>
+        <Typography
           variant="three"
           component={"h1"}
-          sx={{ fontWeight: "500", alignSelf: "start" }}
+          sx={{ fontWeight: "600", alignSelf: "start", mb: 2 }}
           gutterBottom
         >
-          Projects I built
+          PROJECTS
         </Typography>
         <Typography variant="two" gutterBottom>
           Featured Project
@@ -87,63 +96,88 @@ export default function Projects() {
         <Typography variant="four" sx={{ fontWeight: 500 }} gutterBottom>
           SEVI
         </Typography>
-        <Box sx={{ position: "relative" }}>
+        <Box sx={{ width: "100%", display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              gap: 2,
+              flexDirection: "column",
+              alignItems: "flex-end",
+              justifyContent: "flex-end",
+              zIndex: 1,
+            }}
+          >
+            <Box
+              sx={{
+                width: "80%",
+                bgcolor: "#D3D9D4",
+                p: 4,
+                borderRadius: 2,
+              }}
+            >
+              <Typography variant="two" sx={{ color: "#000" }} gutterBottom>
+                SEVI is a dynamic FAQ chatbot for Cavite State University. This
+                RAG application uses Python for generative AI, React for the
+                user interface, and is deployed on Azure, providing instant
+                answers by leveraging retrieved information.
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "flex-end",
+              }}
+            >
+              <Box
+                sx={{ width: "40%", display: "flex", flexWrap: "wrap", gap: 2 }}
+              >
+                {softwares.map((item, index) => {
+                  return (
+                    <Typography
+                      variant="two"
+                      component="h1"
+                      sx={{ fontWeight: 300, width: "70px", ml: "auto" }}
+                      key={index}
+                    >
+                      {item}
+                    </Typography>
+                  );
+                })}
+              </Box>
+            </Box>
+          </Box>
           <img
             src={frame7}
             alt=""
             style={{
+              width: "400px",
+              ObjectFit: "contain",
               borderRadius: "20px",
-              position: "absolute",
-              zIndex: "0",
-              bottom: "-10%",
-              right: "55%",
+              position: "relative ",
+              bottom: "140px",
             }}
           />
-          <Box
-            sx={{
-              width: "60%",
-              bgcolor: "#D3D9D4",
-              p: 4,
-              borderRadius: 2,
-              position: "relative",
-              left: "40%",
-            }}
-          >
-            <Typography variant="two" sx={{ color: "#000" }} gutterBottom>
-              SEVI is a dynamic FAQ chatbot for Cavite State University. This
-              RAG application uses Python for generative AI, React for the user
-              interface, and is deployed on Azure, providing instant answers by
-              leveraging retrieved information.
-            </Typography>
-          </Box>
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            gap: 1,
-          }}
-        >
-          {softwares.map((item, index) => {
-            return (
-              <Typography
-                variant="two"
-                component="h1"
-                sx={{ width: "25%", fontWeight: 300 }}
-                key={index}
-              >
-                {item}
-              </Typography>
-            );
-          })}
         </Box>
       </Box>
-      <Box sx={{ width: '100%', display: "flex", alignItems: "center", justifyContent: "center", gap: 2, flexWrap: "wrap"}}>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 2,
+          flexWrap: "wrap",
+        }}
+      >
         {items.map((item, index) => {
           return (
-            <Box key={index} sx={{ width: "40%", display: "flex" , flexDirection: "column"}}>
+            <Box
+              key={index}
+              sx={{ width: "30%", display: "flex", flexDirection: "column" }}
+            >
               <img src={item.img} />
               <Typography variant="two">{item.description}</Typography>
             </Box>

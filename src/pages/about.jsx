@@ -1,6 +1,15 @@
 import { Typography, Container, Box, List, ListItem } from "@mui/material";
 import pic from "/pic.png";
 export default function About() {
+  const technologies = [
+    "HTML",
+    "CSS",
+    "JavaScript (ES6+)",
+    "React",
+    "Python (Flask)",
+    "Node.js",
+    "Figma",
+  ];
   return (
     <Container
       id="about"
@@ -21,6 +30,7 @@ export default function About() {
           height: "500px",
           alignItems: "start",
           justifyContent: "center",
+          gap: 2,
         }}
       >
         <Box
@@ -33,8 +43,11 @@ export default function About() {
             height: "100%",
           }}
         >
-          <Typography variant="three" sx={{ fontWeight: "500" }} gutterBottom>
-            About Me
+          <Typography variant="two" sx={{ position: "relative", right: "10%" }}>
+            [o1]
+          </Typography>
+          <Typography variant="three" sx={{ fontWeight: "600" }} gutterBottom>
+            ABOUT ME
           </Typography>
           <Typography variant="two" gutterBottom>
             Hello! My name is Michael Joseph Santos, and I'm fascinated by
@@ -53,7 +66,10 @@ export default function About() {
           </Typography>
           <List
             sx={{
+              width: "100%",
               listStyleType: "disc",
+              display: "flex",
+              flexWrap: "wrap",
               pl: 2,
               "& .MuiListItem-root": {
                 display: "list-item",
@@ -61,30 +77,16 @@ export default function About() {
               },
             }}
           >
-            <ListItem>
-              <Typography variant="two">React</Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="two">Node.js</Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="two">Python Flask</Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="two">Figma</Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="two">HTML</Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="two">CSS</Typography>
-            </ListItem>
-            <ListItem>
-              <Typography variant="two">JavaScript (ES6+)</Typography>
-            </ListItem>
+            {technologies.map((tech, index) => {
+              return (
+                <ListItem sx={{ width: "40%" }} key={index}>
+                  <Typography variant="two">{tech}</Typography>
+                </ListItem>
+              );
+            })}
           </List>
         </Box>
-        <img src={pic} style={{ height: "350px" }} />
+        <img src={pic} style={{ width: "20%", aspectRatio: "1/1" }} />
       </Box>
     </Container>
   );

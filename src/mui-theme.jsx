@@ -1,4 +1,5 @@
 import '@fontsource-variable/space-grotesk';
+import '@fontsource-variable/source-code-pro';
 import { createTheme, ThemeProvider } from "@mui/material";
 
 const colors = {
@@ -14,7 +15,7 @@ export default function ThemeProviderWrapper({ children }) {
         fontSize: ".8rem",
       },
       three: {
-        fontSize: "1.4rem",
+        fontSize: "1.2rem",
       },
       four: {
         fontSize: "1.6rem",
@@ -36,7 +37,8 @@ export default function ThemeProviderWrapper({ children }) {
       MuiTypography: {
         styleOverrides: {
           root: {
-            fontFamily: 'Space Grotesk Variable',
+            // fontFamily: 'Space Grotesk Variable',
+            fontFamily: 'Source Code Pro Variable',
             color: "#fff"
           },
         },

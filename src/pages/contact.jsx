@@ -25,11 +25,6 @@ export default function Contacts() {
       icon: <FacebookIcon sx={{ color: "#fff" }} />,
     },
     {
-      title: "GMail",
-      link: "mmakelsantoss@gmail.com",
-      icon: <GoogleIcon sx={{ color: "#fff" }} />,
-    },
-    {
       title: "Instagram",
       link: "#",
       icon: <InstagramIcon sx={{ color: "#fff" }} />,
@@ -42,6 +37,8 @@ export default function Contacts() {
   ];
   return (
     <Container
+      component={"Paper"}
+      elevation={8}
       id="contacts"
       sx={{
         width: "100%",
@@ -80,10 +77,20 @@ export default function Contacts() {
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
+                  "& :hover *": {
+                    color: `#${item.title === "Instagram" ? "e4405f" : item.title === "Facebook" ? "3b5998" : item.title === "LinkedIn" ? "0a66c2" : item.title === "Github" ? "211f1f" : "000"}`,  
+                    transition: "0.3s",
+                    transformOrigin: "bottom-left",
+                    "& span": {
+                      color: "#000",
+                    }
+                  },
                 }}
               >
-                <Link href={item.link} target="_blank">{item.icon}</Link>
-                <Typography>{item.title}</Typography>
+                <Link href={item.link} target="_blank">
+                  {item.icon}
+                </Link>
+                <Typography variant="two">{item.title}</Typography>
               </Box>
             );
           })}
