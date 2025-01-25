@@ -1,6 +1,7 @@
 import { Typography, Container, Box, List, ListItem } from "@mui/material";
 import { motion } from "framer-motion";
 import pic from "/pic.webp";
+import profile from "/profile.webp";
 export default function About() {
   const technologies = [
     "HTML",
@@ -95,8 +96,8 @@ export default function About() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
           viewport={{ once: false }}
-          src={pic}
-          style={{ width: "20%", aspectRatio: "1/1" }}
+          src={profile}
+          style={{ width: "20%" }}
         />
       </Box>
     </Container>
