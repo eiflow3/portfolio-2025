@@ -19,6 +19,7 @@ function App() {
           flexDirection: "column",
           alignItems: "center",
           padding: "0 !important",
+          overflowX: "hidden",
         }}
       >
         <Landing />

@@ -36,9 +36,7 @@ export default function Contacts() {
     },
   ];
   return (
-    <Container
-      component={"Paper"}
-      elevation={8}
+    <Box
       id="contacts"
       sx={{
         width: "100%",
@@ -47,7 +45,7 @@ export default function Contacts() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "end",
-        height: "500px",
+        height: "300px",
         padding: "0 !important",
         gap: 10,
         paddingBottom: "20px !important",
@@ -66,7 +64,7 @@ export default function Contacts() {
         <Typography variant="three" sx={{ fontWeight: 500 }}>
           Get In Touch
         </Typography>
-        <Box sx={{ display: "flex", gap: 3 }}>
+        <Box sx={{ display: "flex", gap: 3, maxWidth: "500px", flexWrap: "wrap", justifyContent: "center" }}>
           {items.map((item, index) => {
             return (
               <Box
@@ -99,6 +97,6 @@ export default function Contacts() {
       <Typography variant="two">
         Design and Build by Michael Joseph Santos
       </Typography>
-    </Container>
+    </Box>
   );
 }

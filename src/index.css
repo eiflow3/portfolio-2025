@@ -6,9 +6,17 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 #root{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #212A31;
+    width: 100dvw;
+}
+section{
+    min-height: 100vh;
 }

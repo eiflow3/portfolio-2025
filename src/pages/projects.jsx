@@ -29,6 +29,7 @@ import LangChain from "/svg/langchain.svg";
 import MongoDB from "/svg/mongodb.svg";
 import LLama3 from "/svg/llama.svg";
 import Mui from "/svg/mui.svg";
+import Azure from "/svg/azure.svg";
 
 export default function Projects() {
   const softwares = [
@@ -41,6 +42,7 @@ export default function Projects() {
     "MongoDB",
     "LLama3",
     "Mui",
+    "Azure"
   ];
 
   const icons = [
@@ -53,6 +55,7 @@ export default function Projects() {
     MongoDB,
     LLama3,
     Mui,
+    Azure
   ];
 
   const items = [
@@ -82,7 +85,8 @@ export default function Projects() {
     },
   ];
   return (
-    <Container
+    <Box
+      component={"section"}
       id="projects"
       sx={{
         width: "100%",
@@ -101,7 +105,13 @@ export default function Projects() {
           display: "flex",
           flexDirection: "column",
           alignItems: "end",
-          width: "calc(50% + 16px)",
+          width: {
+            xs: "calc(80% + 16px)",
+            sm: "calc(50% + 16px)",
+            md: "calc(50% + 16px)",
+            lg: "calc(50% + 16px)",
+            xl: "calc(50% + 16px)",
+          },
           height: "100%",
           gap: 2,
           paddingTop: "50px",
@@ -161,10 +171,22 @@ export default function Projects() {
                 user interface, and is deployed on Azure, providing instant
                 answers by leveraging retrieved information.
               </Typography>
-              <Typography variant="two" component={'h1'} sx={{ color: "#000", textAlign: "end" }} gutterBottom>
+              <Typography
+                variant="two"
+                component={"h1"}
+                sx={{ color: "#000", textAlign: "end" }}
+                gutterBottom
+              >
                 Technologies Used
               </Typography>
-              <Box sx={{ display: "flex", gap: 2, justifyContent: "flex-end" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  justifyContent: "flex-end",
+                  flexWrap: "wrap",
+                }}
+              >
                 {icons.map((icon, index) => {
                   return (
                     <Tooltip title={softwares[index]} key={index}>
@@ -212,6 +234,6 @@ export default function Projects() {
           );
         })}
       </Box>
-    </Container>
+    </Box>
   );
 }
