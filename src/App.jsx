@@ -1,32 +1,13 @@
 import ThemeProviderWrapper from "./mui-theme";
 import "./index.css";
-import { Container } from "@mui/material";
-import Landing from "./pages/landing";
-import About from "./pages/about";
-import Projects from "./pages/projects";
-import Contacts from "./pages/contact";
+import RouterProviderWrapper from "./routes/routes";
 
 // components
 
 function App() {
   return (
     <ThemeProviderWrapper>
-      <Container
-        sx={{
-          width: "100%",
-          maxWidth: "100% !important",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          padding: "0 !important",
-          overflowX: "hidden",
-        }}
-      >
-        <Landing />
-        <About />
-        <Projects />
-        <Contacts/>
-      </Container>
+      <RouterProviderWrapper />
     </ThemeProviderWrapper>
   );
 }

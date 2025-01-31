@@ -26,6 +26,7 @@ export default function Landing() {
         padding: "0 !important",
       }}
     >
+
       <AppBar
         position="static"
         sx={{
