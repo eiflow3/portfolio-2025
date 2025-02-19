@@ -31,7 +31,7 @@ export default function Contacts() {
     },
     {
       title: "LinkedIn",
-      link: "https://www.linkedin.com/in/michael-joseph-santos-0bbb7a293/",
+      link: "https://www.linkedin.com/in/maykel-josep-santos/",
       icon: <LinkedInIcon sx={{ color: "#fff" }} />,
     },
   ];
